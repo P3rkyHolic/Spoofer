@@ -1,11 +1,28 @@
-# Spoofer
-Just a stupid spoofer made by me
+# Stars Spoofer v1.0
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pix49/stars-spoofer/main/app.ico" width="128" height="128">
+</p>
 
+<p align="center">
+  <b>A comprehensive tool for cleaning Steam cache, registry traces, and anticheat artifacts</b>
+</p>
 
-# Stars Spoofer
+<p align="center">
+  <a href="https://discord.gg/spinbots">Discord</a>
+</p>
 
-A comprehensive C# WPF desktop application for cleaning Steam cache, registry traces, and removing anticheat artifacts. Advanced features include system restore points, process management, cloud sync cleaning, and more.
+**Stars Spoofer** is a powerful system cleaning tool built with C# WPF. It helps maintain your system by removing leftover traces from Steam, various anticheat systems, and Windows itself. Features include system restore points, process management, advanced cloud sync cleaning, and comprehensive verification modes.
+
+## 🚀 Quick Start
+
+1. **Download** the latest release from the releases page
+2. **Run as Administrator** - Right-click → "Run as Administrator"
+3. **Select categories** you want to clean (Steam, Faceit, Vanguard, EAC, BattlEye, Windows)
+4. **Click "Full Clean"** for comprehensive cleaning, or use individual buttons for specific actions
+5. **Review the log** to see what was cleaned
+
+⚠️ **Always** create a restore point before major cleaning operations!
 
 ## ⚠️ DISCLAIMER
 
@@ -63,11 +80,11 @@ A comprehensive C# WPF desktop application for cleaning Steam cache, registry tr
 ### Command-Line Mode
 
 ```bash
-SteamCleaner.exe --help                           # Show help
-SteamCleaner.exe --scan --steam                   # Scan only Steam traces
-SteamCleaner.exe --clean --all --dry-run          # Full clean dry run
-SteamCleaner.exe --full --silent                  # Silent full clean
-SteamCleaner.exe --steam --eac --kill-processes --restore-point  # With safety features
+StarsSpoofer.exe --help                           # Show help
+StarsSpoofer.exe --scan --steam                   # Scan only Steam traces
+StarsSpoofer.exe --clean --all --dry-run          # Full clean dry run
+StarsSpoofer.exe --full --silent                  # Silent full clean
+StarsSpoofer.exe --steam --eac --kill-processes --restore-point  # With safety features
 ```
 
 ---
@@ -153,13 +170,14 @@ The anticheat status is shown in logs when cleaning starts, displaying:
 ```bash
 cd "d:\vspreojects\Spoofer"
 
+# Build
 dotnet build -c Release
 
-
-dotnet publish -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true
+# Publish as single file with icon
+dotnet publish -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true -o "publish"
 ```
 
-2. The output will be in `bin\Release\net8.0-windows\` or the publish directory.
+2. The output will be `publish\StarsSpoofer.exe` (~160MB self-contained single file).
 
 ## Usage Guide
 
@@ -222,14 +240,16 @@ dotnet publish -c Release -r win-x64 --self-contained true /p:PublishSingleFile=
 ## File Structure
 
 ```
-SteamCleaner/
+StarsSpoofer/
+├── app.ico                            # Application icon
 ├── app.manifest                       # Admin elevation manifest
 ├── App.xaml/.cs                       # Application entry point with CLI support
 ├── MainWindow.xaml/.cs                # Main application window (GitHub dark theme)
 ├── BackupManagerWindow.xaml/.cs       # Registry backup manager
-├── ExclusionManagerWindow.xaml/.cs  # Exclusion management
+├── ExclusionManagerWindow.xaml/.cs    # Exclusion management
 ├── StatisticsWindow.xaml/.cs          # Statistics dashboard
 ├── ProcessManagerWindow.xaml/.cs      # Process manager
+├── CreditsWindow.xaml/.cs             # Credits dialog
 ├── Models/
 │   ├── CleanerCategory.cs             # Category model
 │   └── BackupEntry.cs                 # Backup entry model
@@ -291,13 +311,23 @@ All cleaning operations run asynchronously with cancellation support to keep the
 - Check that the .reg backup file exists in the Backups folder
 - Try importing the .reg file manually using regedit
 
+## Author & Community
+
+**Created by:** pix49.  
+**Discord:** [discord.gg/spinbots](https://discord.gg/spinbots)
+
+Join the community for support, feature requests, and updates!
+
 ## License
 
 This software is provided as-is for educational purposes. The author is not responsible for any misuse or damage caused by this software.
 
 ## Changelog
 
-### v2.0.0 - Major Update
+### v2.0.0 - Major Update (Stars Spoofer)
+- **Rebrand**: Renamed to Stars Spoofer with custom icon
+- **Credits Window**: Shows author (pix49.) and Discord community link
+- **Single Instance**: Prevents running multiple copies simultaneously
 - **New UI**: GitHub-style dark theme with rounded corners
 - **Steam Cloud Sync Cleaner**: Clear sync conflicts, force resync
 - **Download Cache Manager**: Clear depot cache, paused downloads, HTTP cache
@@ -324,4 +354,3 @@ This software is provided as-is for educational purposes. The author is not resp
 - Registry backup and restore functionality
 - Dry run mode for safe preview
 - MachineGuid change capability
-
