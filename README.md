@@ -1,8 +1,5 @@
 # Stars Spoofer v1.0
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/pix49/stars-spoofer/main/app.ico" width="128" height="128">
-</p>
 
 <p align="center">
   <b>A comprehensive tool for cleaning Steam cache, registry traces, and anticheat artifacts</b>
