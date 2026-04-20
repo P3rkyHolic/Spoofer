@@ -3,7 +3,7 @@ Just a stupid spoofer made by me
 
 
 
-# Steam & Anticheat Cleaner v2.0
+# Stars Spoofer
 
 A comprehensive C# WPF desktop application for cleaning Steam cache, registry traces, and removing anticheat artifacts. Advanced features include system restore points, process management, cloud sync cleaning, and more.
 
